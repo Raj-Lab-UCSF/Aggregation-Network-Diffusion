@@ -1,0 +1,8 @@
+Installation instructions:
+Unzip package files into a directory and add to your MATLAB path.
+
+Program initialization:
+Type 'brainography' at the MATLAB prompt.
+
+Dependencies:
+Program uses spm5 or spm8 to load in new NIFTI/ANALYZE images and expects spm to be on MATLAB path.

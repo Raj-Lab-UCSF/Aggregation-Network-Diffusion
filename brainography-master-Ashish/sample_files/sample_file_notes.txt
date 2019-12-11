@@ -1,0 +1,13 @@
+****Brainography Sample Files****
+
+Contained in this folder are several files to get the first-time user acquainted with the Brainography tool.
+
+*aparc+aseg_renumbered86.nii (Atlas File): 86-region human brain atlas, based on the cortical FreeSurfer atlas. This will be the volume loaded as the reference image
+
+*Matrix_ACS.mat: Undirected, weighted 86x86 connectivity matrix derived from probabilistic DTI fiber tracking; this should be set as your connectivity for aparc+aseg_renumbered86.nii
+
+*attributes.mat: contains 3 different variables of 86-entries (volumetrics, betweenness_centrality, local_efficiency). These should be loaded into the MATLAB workspace. The user can choose from whether to display these values as surface coloring in an opaque "gummi" plot, or to encode the node size diameters to reflect the metric of choice. Volumetrics are computed directly from the atlas file. Betweenness centrality and local efficiency were computed using routines from the Brain Connectivity Toolbox (BCT).
+
+*teststruct.mat
+*rainbow_nodes.mat
+These are files containing complete scene structs which can be loaded into the Brainography interface. After starting Brainography ('B = brainography'), click on the "Load" toolbar icon, and select the teststruct.mat or rainbow_nodes.mat.
