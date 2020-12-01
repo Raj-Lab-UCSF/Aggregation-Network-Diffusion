@@ -5,6 +5,7 @@ function outV = rescale_braindata(V, sig, method, whichcols)
 % sig is ratios wrt stdev of data
 % Note there is a small center shift of 0.5*std to bias output towards
 % above-mean values
+% Added 5-14-20: max scaling
 % Works on both vectors and matrices (columnwise, unless last argument is 'allcols')
 
 outV = V;
@@ -28,6 +29,9 @@ for i = 1:sz(2)
         a0 = mean(v(v>0));  
         outv = max(v, a0-sig*stdv);
         outv = min(outv, a0+sig*stdv);
+    elseif strcmp(method, 'unit')
+        outv = max(v, 0);
+        outv = 0.5*outv/mean(outv);
     elseif strcmp(method,'explinear')
         center = 0; %0.5*sig;
         a0 = mean(v(v>0)) + center*stdv;
